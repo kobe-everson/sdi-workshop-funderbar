@@ -254,6 +254,8 @@
 
   _.objectValue = (a, b) => {
     //Code Goes Below
+    let result = a[b];
+    return result;
   };
 
   //Below you are going to loop through an array, only this time you need to use a for...of loop rather than an traditional for loop.
@@ -264,6 +266,16 @@
   //Loop through the given array and return the total sum of all the numbers in the array.
   _.forOf = (a) => {
     //Code Goes Below
+    let result = 0;
+
+    for (let item of a) {
+      if (typeof item === "number") {
+        result += item;
+      } else {
+        continue;
+      }
+    }
+    return result;
   };
 
   //Loop through the given object and return an array of keys from the object.
@@ -271,11 +283,21 @@
   //example array.push(value)
   _.forInKeys = (a) => {
     //Code Goes Below
+    let resultArray = [];
+    for (var key in a) {
+      resultArray.push(key);
+    }
+    return resultArray;
   };
 
   //Loop through the given object and return an array of values from the object.
   //This is similar to the above function but needs a little digging to get the value.
   _.forInValues = (a) => {
     //Code Goes Below
+    let resultArray = [];
+    for (var key in a) {
+      resultArray.push(a[key]);
+    }
+    return resultArray;
   };
 })();
